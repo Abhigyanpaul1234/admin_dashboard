@@ -1,17 +1,14 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable import/no-cycle */
-import React, { useEffect } from 'react';
-import { AiOutlineMenu } from 'react-icons/ai';
-import { FiShoppingCart } from 'react-icons/fi';
-import { BsChatLeft } from 'react-icons/bs';
-import { BiNotification } from 'react-icons/bi';
-import { MdKeyboardArrowDown } from 'react-icons/md';
+import React from 'react';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
-import avatar from '../data/avatar.jpg';
-import { Cart, Chat, Notification, UserProfile } from '.';
+import { AiOutlineMenu } from 'react-icons/ai';
 import { useStateContext } from '../contexts/ContextProvider';
 
-const NavButton = ({ title, customFunc, icon, color, dotColor }) => {
+/* eslint-disable no-unused-vars */
+/* eslint-disable import/no-cycle */
+
+const NavButton = ({
+  title, customFunc, icon, color, dotColor,
+}) => (
   <TooltipComponent content={title} position="BottomCenter">
     <button
       type="button"
@@ -26,10 +23,10 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }) => {
       {icon}
     </button>
 
-  </TooltipComponent>;
-};
+  </TooltipComponent>
+);
 
-const Navbar = () => {
+function Navbar() {
   const { activeMenu, setActiveMenu } = useStateContext();
 
   return (
@@ -42,6 +39,6 @@ const Navbar = () => {
       />
     </div>
   );
-};
+}
 
 export default Navbar;

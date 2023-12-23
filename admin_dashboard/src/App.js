@@ -1,19 +1,20 @@
+import './App.css';
+import React from 'react';
+import { TooltipComponent } from '@syncfusion/ej2-react-popups';
+import { FiSettings } from 'react-icons/fi';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Navbar, Sidebar } from './components';
+import { useStateContext } from './contexts/ContextProvider';
+import { Area, Bar, ColorMapping, Financial, Line, Pie, Pyramid, Stacked } from './pages';
+
 /* eslint-disable no-unused-vars */
 
-import React, { useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { FiSettings } from 'react-icons/fi';
-import { TooltipComponent } from '@syncfusion/ej2-react-popups';
-
-import './App.css';
-import { Navbar, Footer, Sidebar, ThemeSettings } from './components';
-import { Ecommerce, Orders, Calendar, Editor, Employees, Customers, Kanban, Area, Bar, Pie, Financial, ColorPicker, ColorMapping, Line, Pyramid, Stacked } from './pages';
-import { useStateContext } from './contexts/ContextProvider';
-
 /*eslint-disable */
-const { activeMenu } = useStateContext()
-const App = () => (
+const App = () => {
 
+
+  const { activeMenu } = useStateContext()
+return(
   <div>
     <BrowserRouter>
       <div className="flex relative dark:bg-main-dark-bg">
@@ -45,7 +46,7 @@ const App = () => (
           <Routes>
             {/* dashboard */}
             <Route path="/ecommerce" element="ecommerce" />
-            <Route path="/" element="ecommerce" />
+            <Route path="/" element="ecommerce"  />
 
             { /* pages */}
             <Route path="/orders" element="orders" />
@@ -72,6 +73,7 @@ const App = () => (
       </div>
     </BrowserRouter>
   </div>
-);
+)
+}
 
 export default App;
